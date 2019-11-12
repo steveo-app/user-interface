@@ -1,0 +1,53 @@
+.locationInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 120px;
+
+}
+
+.locationInput h2 {
+    color: rgb(0, 63, 122);
+}
+
+.locationInput form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.locationInput input {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: transparent;
+    color: rgb(0, 63, 122);
+    border: none;
+    border-bottom: solid white 1px;
+    opacity: 0.9;
+    outline: none;
+    font-family: 'Palanquin', sans-serif;
+}
+
+.locationInput input::placeholder {
+    color: rgb(0, 63, 122);
+    transition: 0.8s;
+}
+
+.locationInput button {
+    background-color: rgba(0, 0, 255, 0);
+    color: rgb(0, 139, 69);
+    font-family: 'Palanquin', sans-serif;
+    font-size: 2em;
+    transition: 0.1s;
+    border: none;
+
+}
+
+.locationInput button:active {
+    color: red;
+    font-size: 1.6em;
+    transition: 0.1s;
+    border: none;
+
+}

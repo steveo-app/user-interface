@@ -5,6 +5,8 @@ import { useTransition, animated } from 'react-spring';
 import Home from './components/Home';
 import Register from './components/Register';
 import MainMenu from './components/MainMenu';
+import NewGame from './components/NewGame';
+import Holes from './components/Holes';
 
 function App() {
   
@@ -24,6 +26,8 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/mainmenu" component={MainMenu} />
+            <Route exact path="/game" component={NewGame} />
+            <Route exact path="/holes" component={Holes} />
           </Switch>
         </animated.div>
         ))} 

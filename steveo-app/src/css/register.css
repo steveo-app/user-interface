@@ -27,7 +27,7 @@
         transition: 0.8s;
     }
     
-    input:hover::-webkit-input-placeholder {
+    input:active::-webkit-input-placeholder {
         font-size: 0em;
         transition: 0.8s;
     }
@@ -49,7 +49,7 @@
         border-radius: 5px;
     }
     
-    .registerForm button:hover {
+    .registerForm button:active {
         background-color: rgb(255, 255, 255);
         color: rgb(255, 0, 255);
         transition: 0.5s;
