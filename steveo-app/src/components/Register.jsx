@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { registerUser } from '../actions/index';
+import AbsoluteWrapper from './AbsoluteWrapper';
 
 class Register extends Component {
     constructor(props) {
@@ -46,13 +47,15 @@ class Register extends Component {
 
     render() {
         return (
-            <form className="registerForm" onSubmit={this.registerAccount}>
-                <input type="text" name="firstname" placeholder="first name" onChange={this.changeHandler} />
-                <input type="text" name="lastname" placeholder="last name" onChange={this.changeHandler} />
-                <input type="text" name="email" placeholder="email" onChange={this.changeHandler}/>
-                <input type="password" name="password"placeholder="password" onChange={this.changeHandler}/>
-                <button type="submit">Create Event</button>
-            </form>
+            <AbsoluteWrapper>
+                <form className="registerForm" onSubmit={this.registerAccount}>
+                    <input type="text" name="firstname" placeholder="first name" onChange={this.changeHandler} />
+                    <input type="text" name="lastname" placeholder="last name" onChange={this.changeHandler} />
+                    <input type="text" name="email" placeholder="email" onChange={this.changeHandler}/>
+                    <input type="password" name="password"placeholder="password" onChange={this.changeHandler}/>
+                    <button type="submit">Create Event</button>
+                </form>
+            </AbsoluteWrapper>
         );
     }
   }

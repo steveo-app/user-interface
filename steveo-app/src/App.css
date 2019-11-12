@@ -1,4 +1,11 @@
-  
+.position-absolute {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto
+}
+
+
 @media (max-width: 500px) {
   .App {
     text-align: center;
