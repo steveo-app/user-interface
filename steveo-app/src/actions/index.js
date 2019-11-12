@@ -14,7 +14,7 @@ export function registerUser(payload) {
 
         dispatch({ type: REGISTERING_USER });
 
-        return axios.post(`https://eventr-server.herokuapp.com/api/users/register`, payload)
+        return axios.post(`https://steveo-server.herokuapp.com/api/users/register`, payload)
           .then((response) => {
             dispatch({ type: REGISTERED_USER, payload: response.data });
           })
