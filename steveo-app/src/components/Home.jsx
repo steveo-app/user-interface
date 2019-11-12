@@ -9,6 +9,8 @@ function Home(props) {
     props.history.push('/register')
   }
 
+  document.body.style.backgroundColor = "#50C9CE";
+
   return (
     <AbsoluteWrapper>
       <div className="App">

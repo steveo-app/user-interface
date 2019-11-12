@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { registerUser } from '../actions/index';
 import AbsoluteWrapper from './AbsoluteWrapper';
+import '../css/register.css';
 
 class Register extends Component {
     constructor(props) {
@@ -34,10 +35,10 @@ class Register extends Component {
             "password": password
         })
 
-        // successful register prompts to login screen 
+        // successful register prompts to main page 
 
         .then(() => {
-            this.props.history.push("/eventcreate")
+            this.props.history.push("/mainmenu")
               
         })
         .catch((err) => {
@@ -45,16 +46,23 @@ class Register extends Component {
     })
     }
 
+
     render() {
+
+        document.body.style.backgroundColor = "#4392F1";
+
         return (
             <AbsoluteWrapper>
-                <form className="registerForm" onSubmit={this.registerAccount}>
-                    <input type="text" name="firstname" placeholder="first name" onChange={this.changeHandler} />
-                    <input type="text" name="lastname" placeholder="last name" onChange={this.changeHandler} />
-                    <input type="text" name="email" placeholder="email" onChange={this.changeHandler}/>
-                    <input type="password" name="password"placeholder="password" onChange={this.changeHandler}/>
-                    <button type="submit">Create Event</button>
-                </form>
+                <div className="registerPage">
+                    <h1>Alright hog, let's get started!</h1>
+                    <form className="registerForm" onSubmit={this.registerAccount}>
+                        <input type="text" name="firstname" placeholder="first name" onChange={this.changeHandler} />
+                        <input type="text" name="lastname" placeholder="last name" onChange={this.changeHandler} />
+                        <input type="text" name="email" placeholder="email" onChange={this.changeHandler}/>
+                        <input type="password" name="password"placeholder="password" onChange={this.changeHandler}/>
+                        <button type="submit">Create Account</button>
+                    </form>
+                </div>
             </AbsoluteWrapper>
         );
     }

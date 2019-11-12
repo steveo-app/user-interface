@@ -9,6 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #50C9CE;
   font-family: 'Palanquin', sans-serif;
+  transition: 1s;
 
 }
 
