@@ -8,20 +8,21 @@ export const FAILED_REGISTER = 'FAILED_REGISTER';
 
 export function registerUser(payload) {
 
-    /* register data here */
+  /* register data here */
 
-    return dispatch => {
+  return dispatch => {
 
-        dispatch({ type: REGISTERING_USER });
+      dispatch({ type: REGISTERING_USER });
 
-        return axios.post(`https://steveo-server.herokuapp.com/api/users/register`, payload)
-          .then((response) => {
-            dispatch({ type: REGISTERED_USER, payload: response.data });
-          })
-    
-          .catch((error) => {
-            dispatch({ type: FAILED_REGISTER, payload: error })
-          })
-    
-          }
+      return axios.post(`https://steveo-server.herokuapp.com/api/users/register/`, payload)
+        .then((response) => {
+          dispatch({ type: REGISTERED_USER, payload: response.data });
+        })
+  
+        .catch((error) => {
+          console.log(error)
+          dispatch({ type: FAILED_REGISTER, payload: error })
+        })
+  
+        }
 }

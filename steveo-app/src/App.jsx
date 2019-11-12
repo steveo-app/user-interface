@@ -4,6 +4,7 @@ import { Route, Switch, __RouterContext, useLocation } from 'react-router-dom';
 import { useTransition, animated } from 'react-spring';
 import Home from './components/Home';
 import Register from './components/Register';
+import MainMenu from './components/MainMenu';
 
 function App() {
   
@@ -22,6 +23,7 @@ function App() {
           <Switch location={location}>
             <Route exact path="/" component={Home} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/mainmenu" component={MainMenu} />
           </Switch>
         </animated.div>
         ))} 

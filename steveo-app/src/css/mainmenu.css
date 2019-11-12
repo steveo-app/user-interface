@@ -1,0 +1,65 @@
+.mainMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome {
+    color: #50c9Ce;
+    text-align: center;
+}
+
+.friendsButton {
+    background-color: #67b9df;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 70%;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    transition: 1s;
+    font-family: 'Palanquin', sans-serif;
+  }
+  
+  .friendsButton:hover {
+    background-color: white;
+    color: #006494;
+    transition: 0.5s;
+  }
+
+  .scoresButton {
+    background-color: pink;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 70%;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    transition: 1s;
+    font-family: 'Palanquin', sans-serif;
+  }
+  
+  .scoresButton:hover {
+    background-color: white;
+    color: #006494;
+    transition: 0.5s;
+  }
+
+  .newGame {
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 90%;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    transition: 1s;
+    font-family: 'Palanquin', sans-serif;
+  }
+  
+  .newGame:hover {
+    background-color: white;
+    color: #006494;
+    transition: 0.5s;
+  }

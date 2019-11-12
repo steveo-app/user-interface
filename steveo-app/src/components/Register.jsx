@@ -25,7 +25,7 @@ class Register extends Component {
 
     registerAccount = event => {
         event.preventDefault();
-
+        
         const { firstname, lastname, email, password } = this.state;
 
         this.props.registerUser({
@@ -34,6 +34,7 @@ class Register extends Component {
             "email": email,
             "password": password
         })
+        
 
         // successful register prompts to main page 
 

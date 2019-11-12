@@ -1,5 +1,6 @@
 import React from 'react';
 import AbsoluteWrapper from './AbsoluteWrapper';
+import piggy from '../img/pig.png';
 
 function Home(props) {
 
@@ -14,7 +15,9 @@ function Home(props) {
   return (
     <AbsoluteWrapper>
       <div className="App">
-        <h1 className="logo">LOGO HERE</h1>
+        <img className="piggyLogo" src={piggy} />
+        <div className="logoText">steveo</div>
+        <div className="subText">Disc Golf Caddy</div>
         <div className="buttons">
           <button onClick={toRegister} className="regbutton">Register</button>
           <button className="loginbutton">Login</button>

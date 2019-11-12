@@ -20,9 +20,22 @@
 
 }
 
-.logo {
-  margin-bottom: 100px;
-  color: white;
+.logoText {
+  font-size: 3em;
+  color: paleturquoise;
+  margin-bottom: -10px;
+}
+
+.subText {
+  display: block;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.664);
+  margin-bottom: 20px;
+}
+
+.piggyLogo {
+  width: 85px;
+  height: 85px;
 }
 
 .buttons {

@@ -47,7 +47,11 @@ const reducer = (state = initialState, action) => {
                     lastname: action.payload.user.lastname,
                     email: action.payload.user.email,
                     password: action.payload.user.password
-                }
+                },
+                game: {
+                    ...state.game
+                },
+                token: action.payload.token
             }
         }
 
