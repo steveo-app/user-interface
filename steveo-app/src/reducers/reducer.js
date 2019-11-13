@@ -1,7 +1,8 @@
 import {
     REGISTERING_USER,
     REGISTERED_USER,
-    FAILED_REGISTER
+    FAILED_REGISTER,
+    ADD_LOCATION
 } from '../actions/index';
 
 
@@ -59,6 +60,16 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 error: action.payload.error
+            }
+        }
+
+        case ADD_LOCATION: {
+            return {
+                ...state,
+                game: {
+                    ...state.game,
+                    location: action.payload
+                }
             }
         }
 

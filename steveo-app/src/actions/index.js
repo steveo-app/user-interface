@@ -5,6 +5,7 @@ import axios from 'axios';
 export const REGISTERING_USER = 'REGISTERING_USER';
 export const REGISTERED_USER = 'REGISTERED_USER';
 export const FAILED_REGISTER = 'FAILED_REGISTER';
+export const ADD_LOCATION = 'ADD_LOCATION';
 
 export function registerUser(payload) {
 
@@ -25,4 +26,12 @@ export function registerUser(payload) {
         })
   
         }
+}
+
+export function addLocation(location) {
+
+  return dispatch => {
+
+    dispatch({ type: ADD_LOCATION, payload: location })
+  }
 }
