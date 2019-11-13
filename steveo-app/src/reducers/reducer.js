@@ -2,7 +2,8 @@ import {
     REGISTERING_USER,
     REGISTERED_USER,
     FAILED_REGISTER,
-    ADD_LOCATION
+    ADD_LOCATION,
+    ADD_HOLES
 } from '../actions/index';
 
 
@@ -15,6 +16,7 @@ let initialState = {
         },
     game: {
         location: '',
+        holes: 0,
         players: []
     },
     token: '',
@@ -69,6 +71,16 @@ const reducer = (state = initialState, action) => {
                 game: {
                     ...state.game,
                     location: action.payload
+                }
+            }
+        }
+
+        case ADD_HOLES: {
+            return {
+                ...state,
+                game: {
+                    ...state.game,
+                    holes: action.payload
                 }
             }
         }
