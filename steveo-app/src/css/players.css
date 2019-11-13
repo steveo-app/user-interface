@@ -1,0 +1,72 @@
+.playersBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border: solid red 2px;
+}
+
+.playersBox form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.playersBox input {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.884);
+    border: none;
+    border-bottom: solid rgba(255, 255, 255, 0.418) 2px;
+    opacity: 0.9;
+    outline: none;
+    font-family: 'Palanquin', sans-serif;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.438);
+    transition: 0.8s;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+input:active::-webkit-input-placeholder {
+    font-size: 0em;
+    transition: 0.8s;
+    text-align: center;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: rgba(9, 23, 151, 0.322);
+    font-size: 0em;
+    transition: 0.8s;
+    text-align: center;
+}
+
+.playersBox h1 {
+    color: rgb(224, 224, 224);
+    font-size: 1.2em;
+}
+
+.playersBox button {
+    margin-top: 10px;
+    background-color: rgba(255, 0, 255, 0.644);
+    height: 40px;
+    border: none;
+    color: white;
+    transition: 0.5s;
+    font-family: 'Palanquin', sans-serif;
+    border-radius: 5px;
+    width: 50%;
+}
+
+.playersBox button:active {
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 0, 255);
+    transition: 0.5s;
+}

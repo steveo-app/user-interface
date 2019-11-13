@@ -34,7 +34,7 @@ function Holes(props) {
             <Spring
                 from={{ opacity: 0 }}
                 to={{ opacity: 1 }}
-                delay='1500'>
+                delay='1000'>
                 {props => <div style={props}><button onClick={toPlayers9} className="nine">
                     9 Holes
                 </button></div>}
@@ -42,7 +42,7 @@ function Holes(props) {
             <Spring
                 from={{ opacity: 0 }}
                 to={{ opacity: 1 }}
-                delay='2500'>
+                delay='1500'>
                 {props => <div style={props}><button onClick={toPlayers18} className="eighteen">
                     18 Holes
                 </button></div>}
