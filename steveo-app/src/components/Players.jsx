@@ -31,12 +31,12 @@ function Players(props) {
             <h1>Which hogs are playing today?</h1>
             <form onSubmit={addPlayers}>
                 <input type="text" name="player" value={player} placeholder="Name" onChange={changeHandler} />
-                <button type="submit">Add Player</button>
+                <button className="addPlayerButton" type="submit">Add Player</button>
             </form>
             <div className="addingPlayers">
                 {players.map(player => {
                     return (
-                        <h1>{player}</h1>
+                        <div className="playerBlock"><h3>{player}</h3><button className="removePlayer" /></div>
                     )
                 })}
             </div>
