@@ -16,11 +16,24 @@ function Players(props) {
     const addPlayers = event => {
         event.preventDefault();
 
-        setPlayers(prev => [...prev, player])
+        if(players.length <= 5) {
+            setPlayers(prev => [...prev, player])
 
-        setPlayer('');
+            setPlayer('');
+        } else {
+            setPlayers([]);
 
-        console.log(players)
+            setPlayer('');
+        }
+
+    }
+
+    const removePlayer = event => {
+        event.preventDefault();
+
+        setPlayers(players.filter(player => event.target.value !== player))
+        
+        console.log(players);
     }
 
     document.body.style.backgroundColor = "#4392F1";
@@ -36,11 +49,14 @@ function Players(props) {
             <div className="addingPlayers">
                 {players.map(player => {
                     return (
-                        <div className="playerBlock"><h3>{player}</h3><button className="removePlayer" /></div>
+                        <div className="playerBlock">
+                            <div className="playerName">{player}</div>
+                            <button className="removePlayer" value={player} onClick={removePlayer} />
+                        </div>
                     )
                 })}
             </div>
-            <button>Next</button>
+            <button className="playersNext">Next</button>
         </div>
     </AbsoluteWrapper>
   );
