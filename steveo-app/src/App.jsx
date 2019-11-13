@@ -8,6 +8,7 @@ import MainMenu from './components/MainMenu';
 import NewGame from './components/NewGame';
 import Holes from './components/Holes';
 import Players from './components/Players';
+import Game from './components/Game';
 
 function App() {
   
@@ -27,9 +28,10 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/mainmenu" component={MainMenu} />
-            <Route exact path="/game" component={NewGame} />
+            <Route exact path="/newgame" component={NewGame} />
             <Route exact path="/holes" component={Holes} />
             <Route exact path="/players" component={Players} />
+            <Route exact path="/game" component={Game} />
           </Switch>
         </animated.div>
         ))} 

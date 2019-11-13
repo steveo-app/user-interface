@@ -7,6 +7,7 @@ export const REGISTERED_USER = 'REGISTERED_USER';
 export const FAILED_REGISTER = 'FAILED_REGISTER';
 export const ADD_LOCATION = 'ADD_LOCATION';
 export const ADD_HOLES = 'ADD_HOLES';
+export const ADD_PLAYERS = 'ADD_PLAYERS';
 
 export function registerUser(payload) {
 
@@ -44,3 +45,12 @@ export function addHoles(holes) {
     dispatch({ type: ADD_HOLES, payload: holes })
   }
 }
+
+export function addPlayers(players) {
+
+  return dispatch => {
+
+    dispatch({ type: ADD_PLAYERS, payload: players })
+  }
+}
+

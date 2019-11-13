@@ -3,7 +3,8 @@ import {
     REGISTERED_USER,
     FAILED_REGISTER,
     ADD_LOCATION,
-    ADD_HOLES
+    ADD_HOLES,
+    ADD_PLAYERS
 } from '../actions/index';
 
 
@@ -81,6 +82,17 @@ const reducer = (state = initialState, action) => {
                 game: {
                     ...state.game,
                     holes: action.payload
+                }
+            }
+        }
+
+        case ADD_PLAYERS: {
+            
+            return {
+                ...state,
+                game: {
+                    ...state.game,
+                    players: action.payload
                 }
             }
         }

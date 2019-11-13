@@ -9,7 +9,7 @@ function MainMenu(props) {
     const toNewGame = event => {
         event.preventDefault();
 
-        props.history.push('/game')
+        props.history.push('/newgame')
     }
 
   document.body.style.backgroundColor = "#006494";

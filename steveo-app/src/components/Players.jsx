@@ -1,29 +1,32 @@
 import React, { useState } from 'react';
 import AbsoluteWrapper from './AbsoluteWrapper';
 import '../css/players.css';
+import { addPlayers } from '../actions/index';
+import { connect } from 'react-redux';
 
 function Players(props) {
     
-    const [player, setPlayer] = useState('');
+    const [player, setPlayer] = useState({name: '', score: 0});
     const [players, setPlayers] = useState([]);
 
     const changeHandler = event => {
         event.preventDefault();
 
-        setPlayer(event.target.value);
+        setPlayer({ name: event.target.value, score: 0 });
+
     }
 
     const addPlayers = event => {
         event.preventDefault();
 
         if(players.length <= 5) {
-            setPlayers(prev => [...prev, player])
+            setPlayers(prev => [...prev, player]);
 
-            setPlayer('');
+            setPlayer({name: '', score: 0});
         } else {
             setPlayers([]);
 
-            setPlayer('');
+            setPlayer({name: '', score: 0});
         }
 
     }
@@ -31,9 +34,17 @@ function Players(props) {
     const removePlayer = event => {
         event.preventDefault();
 
-        setPlayers(players.filter(player => event.target.value !== player))
+        setPlayers(players.filter(player => event.target.value !== player.name))
         
         console.log(players);
+    }
+
+    const toGame = event => {
+        event.preventDefault();
+
+        props.addPlayers(players);
+
+        props.history.push('/game')
     }
 
     document.body.style.backgroundColor = "#4392F1";
@@ -43,23 +54,32 @@ function Players(props) {
         <div className="playersBox">
             <h1>Which hogs are playing today?</h1>
             <form onSubmit={addPlayers}>
-                <input type="text" name="player" value={player} placeholder="Name" onChange={changeHandler} />
+                <input type="text" name="player" value={player.name} placeholder="Name" onChange={changeHandler} />
                 <button className="addPlayerButton" type="submit">Add Player</button>
             </form>
             <div className="addingPlayers">
                 {players.map(player => {
                     return (
                         <div className="playerBlock">
-                            <div className="playerName">{player}</div>
-                            <button className="removePlayer" value={player} onClick={removePlayer} />
+                            <div className="playerName">{player.name}</div>
+                            <button className="removePlayer" value={player.name} onClick={removePlayer} />
                         </div>
                     )
                 })}
             </div>
-            <button className="playersNext">Next</button>
+            <button onClick={toGame} className="playersNext">Next</button>
         </div>
     </AbsoluteWrapper>
   );
 }
 
-export default Players;
+const mapDispatchToProps = {
+    addPlayers: addPlayers
+}
+
+export default(
+    connect(
+        null,
+        mapDispatchToProps
+    )(Players)
+);
