@@ -44,7 +44,7 @@ function Players(props) {
 
         props.addPlayers(players);
 
-        props.history.push('/game')
+        props.history.push('/game/1')
     }
 
     document.body.style.backgroundColor = "#4392F1";

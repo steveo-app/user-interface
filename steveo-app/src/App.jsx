@@ -31,7 +31,7 @@ function App() {
             <Route exact path="/newgame" component={NewGame} />
             <Route exact path="/holes" component={Holes} />
             <Route exact path="/players" component={Players} />
-            <Route exact path="/game" component={Game} />
+            <Route exact path="/game/:id" component={Game} />
           </Switch>
         </animated.div>
         ))} 

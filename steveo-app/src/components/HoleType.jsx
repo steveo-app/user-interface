@@ -3,32 +3,6 @@ import AbsoluteWrapper from './AbsoluteWrapper';
 
 function HoleType(props) {
 
-    const [holeScore, setHoleScore] = useState();
-    const [playerScore, setPlayerScore] = useState();
-
-    const changeHandler = event => {
-        event.preventDefault();
-
-        const currentPlayer = props.players.filter(player => {
-            return player.name === event.target.name
-          })
-
-        setHoleScore(currentPlayer.tempScore);
-
-    }
-
-    const addToScore = event => {
-        event.preventDefault();
-
-        const currentPlayer = props.players.filter(player => {
-            return player.name === event.target.name
-          })
-
-        setPlayerScore(currentPlayer.tempScore + currentPlayer.score)
-
-        console.log(playerScore);
-    }
-
     return (
         <AbsoluteWrapper>
             <div className="holeBox">
@@ -38,9 +12,13 @@ function HoleType(props) {
                     return (
                         <div className="playerAndScore">
                             <h2>{player.name}</h2>
-                            <input type="number" placeholder="strokes" name={player.name} onChange={changeHandler} value={holeScore} />
+                            <input 
+                                type="number" 
+                                placeholder="strokes" 
+                                name={player.name} 
+                            />
                             <h3>Score: {player.score}</h3>
-                            <button name={player.name} onClick={addToScore}>ADD SCORE</button>
+                            <button name={player.name}>ADD SCORE</button>
                         </div>
                     )
                 })}

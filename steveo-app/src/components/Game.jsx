@@ -5,23 +5,20 @@ import { connect } from 'react-redux';
 
 function Game(props) {
 
-    let [hole, setHole] = useState(1);
+    const { location, players } = props.game;
 
-    const { location, holes, players } = props.game;
 
     const nextHole = event => {
         event.preventDefault();
 
-        hole++;
+        props.history.push(`/game/${Number(props.match.params.id) + 1}`);
 
-        setHole(hole);
-
-        console.log(hole);
     }
+
 
     return (
         <AbsoluteWrapper>
-            <HoleType nextHole={nextHole} hole={hole} players={players} location={location}/>
+            <HoleType hole={props.match.params.id} history={props.history} nextHole={nextHole} players={players} location={location}/>
         </AbsoluteWrapper>
     )
 }
