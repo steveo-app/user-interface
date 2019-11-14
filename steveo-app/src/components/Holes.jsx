@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import AbsoluteWrapper from './AbsoluteWrapper';
 import { connect } from 'react-redux'
 import '../css/newgame.css';

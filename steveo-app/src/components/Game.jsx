@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import AbsoluteWrapper from './AbsoluteWrapper';
 import HoleType from './HoleType';
 import { connect } from 'react-redux';

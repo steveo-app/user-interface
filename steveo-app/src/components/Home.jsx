@@ -15,7 +15,7 @@ function Home(props) {
   return (
     <AbsoluteWrapper>
       <div className="App">
-        <img className="piggyLogo" src={piggy} />
+        <img alt="piggy" className="piggyLogo" src={piggy} />
         <div className="logoText">hogger</div>
         <div className="subText">Disc Golf Caddy</div>
         <div className="buttons">

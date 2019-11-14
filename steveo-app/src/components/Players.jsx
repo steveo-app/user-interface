@@ -58,9 +58,9 @@ function Players(props) {
                 <button className="addPlayerButton" type="submit">Add Player</button>
             </form>
             <div className="addingPlayers">
-                {players.map(player => {
+                {players.map((player, i) => {
                     return (
-                        <div className="playerBlock">
+                        <div key={i} className="playerBlock">
                             <div className="playerName">{player.name}</div>
                             <button className="removePlayer" value={player.name} onClick={removePlayer} />
                         </div>

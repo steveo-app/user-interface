@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './App.css';
-import { Route, Switch, __RouterContext, useLocation } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import { useTransition, animated } from 'react-spring';
 import Home from './components/Home';
 import Register from './components/Register';

@@ -3,19 +3,34 @@ import AbsoluteWrapper from './AbsoluteWrapper';
 
 function HoleType(props) {
 
+    const [ playerScore, setPlayerScore ] = useState();
+
+    const changeHandler = event => {
+        event.preventDefault();
+
+        const currentPlayer = props.players.filter(player => {
+            return player.name === event.target.name
+        })
+
+        setPlayerScore(currentPlayer.score)
+    }
+    
+
     return (
         <AbsoluteWrapper>
             <div className="holeBox">
                 <h2>{props.location}</h2>
                 <h1>Hole {props.hole}</h1>
-                {props.players.map(player => {
+                {props.players.map((player, i) => {
                     return (
-                        <div className="playerAndScore">
+                        <div key={i} className="playerAndScore">
                             <h2>{player.name}</h2>
                             <input 
                                 type="number" 
                                 placeholder="strokes" 
                                 name={player.name} 
+                                onChange={changeHandler}
+                                value={playerScore}
                             />
                             <h3>Score: {player.score}</h3>
                             <button name={player.name}>ADD SCORE</button>
