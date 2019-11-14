@@ -1,0 +1,30 @@
+.holeBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.holeBox h1 { 
+    color: rgb(70, 0, 161);
+    display: block;
+}
+
+.holeBox h2 {
+    color: rgb(8, 111, 151);
+    margin-top: -40px;
+}
+
+.playersScores {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    height: 350px;
+    border: solid blue 2px;
+}
+
+.playerAndScore {
+    display: flex;
+    border: solid purple 2px;
+    width: 100%;
+}

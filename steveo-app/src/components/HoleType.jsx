@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AbsoluteWrapper from './AbsoluteWrapper';
+import '../css/holestyles.css';
 
 function HoleType(props) {
 
@@ -39,33 +40,35 @@ function HoleType(props) {
         event.target.style.backgroundColor = 'red';
     }
     
+    document.body.style.backgroundColor = "#50C9CE";
 
     return (
         <AbsoluteWrapper>
             <div className="holeBox">
-                <h2>{props.location}</h2>
-                <h1>Hole {props.hole}</h1>
-                {props.players.map((player, i) => {
-                    return (
-                        <div key={i} className="playerAndScore">
-                            <h2>{player.name}</h2>
-                            <input 
-                                type="number" 
-                                placeholder="strokes" 
-                                name={player.name} 
-                                onChange={changeHandler}
-                                value={playerScore}
-                            />
-                            <h3>Score: {player.score}</h3>
-                            <button 
-                                name={player.name} 
-                                onClick={addScore}
-                            >
-                                ADD SCORE
-                            </button>
-                        </div>
-                    )
-                })}
+                <h1>{props.location}</h1>
+                <h2>Hole {props.hole}</h2>
+                <div className="playersScores">
+                    {props.players.map((player, i) => {
+                        return (
+                            <div key={i} className="playerAndScore">
+                                <h3>{player.name}</h3>
+                                <input 
+                                    type="number" 
+                                    placeholder="strokes" 
+                                    name={player.name} 
+                                    onChange={changeHandler}
+                                    value={playerScore}
+                                />
+                                <button 
+                                    name={player.name} 
+                                    onClick={addScore}
+                                >
+                                    ADD SCORE
+                                </button>
+                            </div>
+                        )
+                    })}
+                </div>
                 <button onClick={props.nextHole}>NEXT HOLE</button>
             </div>
         </AbsoluteWrapper>
