@@ -3,6 +3,8 @@ import AbsoluteWrapper from './AbsoluteWrapper';
 
 function HoleType(props) {
 
+    const [ updatedPlayers, updatePlayers ] = useState(props.players);
+
     const [ playerScore, setPlayerScore ] = useState();
 
     const changeHandler = event => {
@@ -15,10 +17,24 @@ function HoleType(props) {
         setPlayerScore(currentPlayer.score)
     }
 
+    /// addscores to specific players current score then approves it
+
     const addScore = event => {
         event.preventDefault();
 
-        console.log(document.querySelector(`input[name=${event.target.name}]`).value);
+        const playerStroke = document.querySelector(`input[name=${event.target.name}]`).value;
+
+        console.log(updatedPlayers);
+
+        const newArr = updatedPlayers.map(player => {
+            if(player.name === event.target.name) {
+                return { ...player, score: (Number(player.score) + Number(playerStroke)) }
+            } else {
+                return player
+            }
+        })
+
+        console.log(newArr)
     }
     
 
