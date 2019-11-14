@@ -21,8 +21,7 @@ function Game(props) {
 
     return (
         <AbsoluteWrapper>
-            <button onClick={nextHole}>NEXT HOLE</button>
-            <HoleType hole={hole} players={players} location={location}/>
+            <HoleType nextHole={nextHole} hole={hole} players={players} location={location}/>
         </AbsoluteWrapper>
     )
 }
