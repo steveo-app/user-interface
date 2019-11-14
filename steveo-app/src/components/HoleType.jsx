@@ -8,13 +8,12 @@ function HoleType(props) {
     const changeHandler = event => {
         event.preventDefault();
 
-        setPlayerScore(event.target.value);
-
-        const result = props.players.filter(player => {
+        const currentPlayer = props.players.filter(player => {
             return player.name === event.target.name
           })
 
-        console.log(result);
+        setPlayerScore(currentPlayer.score);
+
     }
 
     const addToScore = event => {

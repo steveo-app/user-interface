@@ -6,13 +6,13 @@ import { connect } from 'react-redux';
 
 function Players(props) {
     
-    const [player, setPlayer] = useState({name: '', score: 0});
+    const [player, setPlayer] = useState({name: '', score: 0, tempScore: 0});
     const [players, setPlayers] = useState([]);
 
     const changeHandler = event => {
         event.preventDefault();
 
-        setPlayer({ name: event.target.value, score: 0 });
+        setPlayer({ name: event.target.value, score: 0, tempScore: 0});
 
     }
 
@@ -22,11 +22,11 @@ function Players(props) {
         if(players.length <= 5) {
             setPlayers(prev => [...prev, player]);
 
-            setPlayer({name: '', score: 0});
+            setPlayer({name: '', score: 0, tempScore: 0});
         } else {
             setPlayers([]);
 
-            setPlayer({name: '', score: 0});
+            setPlayer({name: '', score: 0, tempScore: 0});
         }
 
     }
