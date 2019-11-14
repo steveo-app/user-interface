@@ -24,17 +24,19 @@ function HoleType(props) {
 
         const playerStroke = document.querySelector(`input[name=${event.target.name}]`).value;
 
-        console.log(updatedPlayers);
-
         const newArr = updatedPlayers.map(player => {
             if(player.name === event.target.name) {
                 return { ...player, score: (Number(player.score) + Number(playerStroke)) }
             } else {
-                return player
+                return player;
             }
         })
 
-        console.log(newArr)
+        updatePlayers(newArr);
+
+        console.log(event.target)
+        
+        event.target.style.backgroundColor = 'red';
     }
     
 
@@ -55,7 +57,12 @@ function HoleType(props) {
                                 value={playerScore}
                             />
                             <h3>Score: {player.score}</h3>
-                            <button name={player.name} onClick={addScore}>ADD SCORE</button>
+                            <button 
+                                name={player.name} 
+                                onClick={addScore}
+                            >
+                                ADD SCORE
+                            </button>
                         </div>
                     )
                 })}
