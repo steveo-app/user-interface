@@ -14,6 +14,12 @@ function HoleType(props) {
 
         setPlayerScore(currentPlayer.score)
     }
+
+    const addScore = event => {
+        event.preventDefault();
+
+        console.log(document.querySelector(`input[name=${event.target.name}]`).value);
+    }
     
 
     return (
@@ -33,7 +39,7 @@ function HoleType(props) {
                                 value={playerScore}
                             />
                             <h3>Score: {player.score}</h3>
-                            <button name={player.name}>ADD SCORE</button>
+                            <button name={player.name} onClick={addScore}>ADD SCORE</button>
                         </div>
                     )
                 })}
