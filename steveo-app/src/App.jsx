@@ -9,6 +9,7 @@ import NewGame from './components/NewGame';
 import Holes from './components/Holes';
 import Players from './components/Players';
 import Game from './components/Game';
+import EndGame from './components/EndGame';
 
 function App() {
   
@@ -32,6 +33,7 @@ function App() {
             <Route exact path="/holes" component={Holes} />
             <Route exact path="/players" component={Players} />
             <Route exact path="/game/:id" component={Game} />
+            <Route exact path="/endgame" component={EndGame} />
           </Switch>
         </animated.div>
         ))} 

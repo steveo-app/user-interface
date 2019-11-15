@@ -84,3 +84,15 @@
     height: 30px;
     margin-top: -5px;
 }
+
+.showPlayerScore {
+    text-align: center;
+    background-color: rgb(99, 0, 145);
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    color: rgb(253, 253, 253);
+    transition: 1s;
+    opacity: 0.8;
+    border-radius: 25px;
+}

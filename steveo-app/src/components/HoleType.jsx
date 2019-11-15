@@ -12,6 +12,7 @@ function HoleType(props) {
 
     const [ count, setCount ] = useState(0);
 
+    const [ playerCard, setPlayerCard ] = useState(false);
 
     const changeHandler = event => {
         event.preventDefault();
@@ -82,8 +83,27 @@ function HoleType(props) {
         }
            
         }
+
+    const showPlayerScore = event => {
+        event.preventDefault();
+
+        const currentPlayer = props.players.filter(player => {
+            return player.name === event.target.name
+        })
+
+        document.getElementsByClassName('showPlayerScore').id = `${event.target.name}`;
+
+        document.getElementsByClassName('showPlayerScore').title = `${event.target.score}`;
+
+        setPlayerCard(true);
+
+
+    }
     
     document.body.style.backgroundColor = "#50C9CE";
+
+    let playerScorecard = document.getElementsByClassName('showPlayerScore').id;
+    let score = document.getElementsByClassName('showPlayerScore').title;
 
     return (
         <AbsoluteWrapper>
@@ -91,10 +111,11 @@ function HoleType(props) {
                 <h1>{props.location}</h1>
                 <h2>Hole {props.hole}</h2>
                 <div className="playersScores">
+                <div style={playerCard ? {display: 'block'} : {display: 'none'}} className="showPlayerScore">{playerScorecard} {score}</div>
                     {props.players.map((player, i) => {
                         return (
                             <div key={i} className="playerAndScore">
-                                <button className="playerButton">{player.name}</button>
+                                <button name={player.name} title={player.score} onClick={showPlayerScore} className="playerButton">{player.name}</button>
                                 <input 
                                     type="number" 
                                     placeholder="strokes" 
