@@ -29,16 +29,33 @@ function HoleType(props) {
 
         const newArr = updatedPlayers.map(player => {
             if(player.name === event.target.name) {
+                console.log(player.score)
                 return { ...player, score: (Number(player.score) + Number(playerStroke)) }
             } else {
                 return player;
             }
         })
 
-        updatePlayers(newArr);
+        const redoScore = updatedPlayers.map(player => {
+            if(player.name === event.target.name) {
+                return { ...player, score: 0 }
+            } else {
+                return player;
+            }
+        })
+
+
+        if(event.target.innerHTML === 'ADD SCORE') {
+            updatePlayers(newArr);
+            event.target.style.backgroundColor = '#00ff00';
+            event.target.innerHTML = 'ADDED';
+            console.log(updatedPlayers)
+        } else {
+            updatePlayers(redoScore);
+            event.target.style.backgroundColor = 'rgb(112, 198, 255)';
+            event.target.innerHTML = 'ADD SCORE';
+        }
         
-        event.target.style.backgroundColor = '#00ff00';
-        event.target.innerHTML = 'ADDED';
     }
 
     //sends scores to store
@@ -51,10 +68,12 @@ function HoleType(props) {
 
         const allEqual = arr => arr.every( v => v.innerHTML === arr[0].innerHTML )
         
-        console.log(allEqual(greenButtons));
-
+        if(allEqual(greenButtons)) {
             props.scoresToStore(updatedPlayers)
             props.nextHole();
+        } else {
+            console.log('Need to add all scores')
+        }
            
         }
 

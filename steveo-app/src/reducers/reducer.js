@@ -100,6 +100,8 @@ const reducer = (state = initialState, action) => {
 
         case SCORES_STORE: {
             
+            console.log(state.game.players);
+            console.log(action.payload);
             return {
                 ...state,
                 game: {
