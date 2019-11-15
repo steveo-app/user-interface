@@ -10,6 +10,7 @@ function Game(props) {
 
     const nextHole = event => {
 
+
         props.history.push(`/game/${Number(props.match.params.id) + 1}`);
 
     }

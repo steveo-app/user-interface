@@ -10,6 +10,9 @@ function HoleType(props) {
 
     const [ playerScore, setPlayerScore ] = useState();
 
+    const [ count, setCount ] = useState(0);
+
+
     const changeHandler = event => {
         event.preventDefault();
 
@@ -47,8 +50,11 @@ function HoleType(props) {
 
         if(event.target.innerHTML === 'ADD SCORE') {
             updatePlayers(newArr);
+            setCount(prev => prev + 1);
+            console.log(count);
             event.target.style.backgroundColor = '#00ff00';
             event.target.innerHTML = 'ADDED';
+
             console.log(updatedPlayers)
         } else {
             updatePlayers(redoScore);
@@ -65,19 +71,17 @@ function HoleType(props) {
 
         const greenButtons = Array.from(document.getElementsByClassName("successAdd"));
 
-        const allEqual = arr => arr.every( v => v.innerHTML === arr[0].innerHTML )
+        const allEqual = arr => arr.every( v => v.innerHTML === arr[0].innerHTML)
         
         if(allEqual(greenButtons)) {
             props.scoresToStore(updatedPlayers)
+            document.getElementsByClassName('allset').className = 'successAdd';
             props.nextHole();
         } else {
             console.log('Need to add all scores')
         }
            
         }
-
-    const allEqual = arr => arr.every( v => v.innerHTML === arr[0].innerHTML )
-    const greenButtons = Array.from(document.getElementsByClassName("successAdd"));
     
     document.body.style.backgroundColor = "#50C9CE";
 
@@ -109,7 +113,7 @@ function HoleType(props) {
                         )
                     })}
                 </div>
-                <button style={(allEqual(greenButtons)) ? {display: "block"} : {display: "none"}}
+                <button style={(props.players.length === count) ? {display: "block"} : {display: "none"}}
                     className="nextHole" 
                     onClick={submitScores}
                 >
