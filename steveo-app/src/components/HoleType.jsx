@@ -102,6 +102,14 @@ function HoleType(props) {
 
 
     }
+
+    const hidePlayerScore = event => {
+        event.preventDefault();
+
+        setPlayerCard(false);
+    }
+
+    document.body.addEventListener('click', hidePlayerScore, true);
     
     document.body.style.backgroundColor = "#50C9CE";
 

@@ -87,11 +87,14 @@
 
 .showPlayerScore {
     text-align: center;
+    line-height: 100px;
     background-color: rgb(99, 0, 145);
-    width: 200px;
-    height: 300px;
+    width: 175px;
+    height: 100px;
+    margin-top: 200px;
     position: absolute;
     color: rgb(253, 253, 253);
+    font-size: 1.5em;
     transition: 1s;
     opacity: 0.8;
     border-radius: 25px;
