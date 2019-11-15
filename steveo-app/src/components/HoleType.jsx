@@ -64,7 +64,6 @@ function HoleType(props) {
         event.preventDefault();
 
         const greenButtons = Array.from(document.getElementsByClassName("successAdd"));
-        console.log(greenButtons);
 
         const allEqual = arr => arr.every( v => v.innerHTML === arr[0].innerHTML )
         
@@ -77,7 +76,8 @@ function HoleType(props) {
            
         }
 
-    
+    const allEqual = arr => arr.every( v => v.innerHTML === arr[0].innerHTML )
+    const greenButtons = Array.from(document.getElementsByClassName("successAdd"));
     
     document.body.style.backgroundColor = "#50C9CE";
 
@@ -90,7 +90,7 @@ function HoleType(props) {
                     {props.players.map((player, i) => {
                         return (
                             <div key={i} className="playerAndScore">
-                                <h3>{player.name}</h3>
+                                <button className="playerButton">{player.name}</button>
                                 <input 
                                     type="number" 
                                     placeholder="strokes" 
@@ -109,7 +109,7 @@ function HoleType(props) {
                         )
                     })}
                 </div>
-                <button 
+                <button style={(allEqual(greenButtons)) ? {display: "block"} : {display: "none"}}
                     className="nextHole" 
                     onClick={submitScores}
                 >
