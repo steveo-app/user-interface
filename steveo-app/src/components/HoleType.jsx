@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import AbsoluteWrapper from './AbsoluteWrapper';
 import '../css/holestyles.css';
+import { connect } from 'react-redux';
+import { scoresToStore } from '../actions/index';
 
 function HoleType(props) {
 
@@ -34,11 +36,29 @@ function HoleType(props) {
         })
 
         updatePlayers(newArr);
-
-        console.log(event.target)
         
-        event.target.style.backgroundColor = 'red';
+        event.target.style.backgroundColor = '#00ff00';
+        event.target.innerHTML = 'ADDED';
     }
+
+    //sends scores to store
+
+    const submitScores = event => {
+        event.preventDefault();
+
+        const greenButtons = Array.from(document.getElementsByClassName("successAdd"));
+        console.log(greenButtons);
+
+        const allEqual = arr => arr.every( v => v.innerHTML === arr[0].innerHTML )
+        
+        console.log(allEqual(greenButtons));
+
+            props.scoresToStore(updatedPlayers)
+            props.nextHole();
+           
+        }
+
+    
     
     document.body.style.backgroundColor = "#50C9CE";
 
@@ -60,6 +80,7 @@ function HoleType(props) {
                                     value={playerScore}
                                 />
                                 <button 
+                                    className="successAdd"
                                     name={player.name} 
                                     onClick={addScore}
                                 >
@@ -69,11 +90,30 @@ function HoleType(props) {
                         )
                     })}
                 </div>
-                <button onClick={props.nextHole}>NEXT HOLE</button>
+                <button 
+                    className="nextHole" 
+                    onClick={submitScores}
+                >
+                            NEXT HOLE
+                </button>
             </div>
         </AbsoluteWrapper>
     )
 }
 
+const mapStateToProps = (state) => {
+    return {
+        game: state.game
+    }
+}
 
-export default HoleType;
+const mapDispatchToProps = {
+    scoresToStore: scoresToStore
+}
+
+export default(
+    connect(
+        mapStateToProps,
+        mapDispatchToProps
+    )(HoleType)
+);

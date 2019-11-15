@@ -4,7 +4,8 @@ import {
     FAILED_REGISTER,
     ADD_LOCATION,
     ADD_HOLES,
-    ADD_PLAYERS
+    ADD_PLAYERS,
+    SCORES_STORE
 } from '../actions/index';
 
 
@@ -87,6 +88,17 @@ const reducer = (state = initialState, action) => {
         }
 
         case ADD_PLAYERS: {
+            
+            return {
+                ...state,
+                game: {
+                    ...state.game,
+                    players: action.payload
+                }
+            }
+        }
+
+        case SCORES_STORE: {
             
             return {
                 ...state,
