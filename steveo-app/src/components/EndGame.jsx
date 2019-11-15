@@ -24,7 +24,7 @@ function EndGame(props) {
         <AbsoluteWrapper>
             <div className="endGame">
                 <h1>GAME OVER</h1>
-                <h2>Congrats {winner.name}!</h2>
+                <h2>Congrats {winner[0].name}!</h2>
                 <div className="allScores">
                     {players.map(player => {
                         return (
