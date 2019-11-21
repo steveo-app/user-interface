@@ -1,0 +1,35 @@
+.endGame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    background-color: lightpink;
+    border: solid black 3px;
+    width: 90%;
+}
+
+.allScores {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    border: solid white 1px;
+}
+
+.finalCard {
+    display: flex;
+    justify-content: space-between;
+    background-color: orange;
+    color: blue;
+    align-items: center;
+}
+
+.finalCard h3 {
+    color: red;
+}
+
+.finalCard h4 {
+    color: green;
+}

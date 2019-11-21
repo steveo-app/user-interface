@@ -1,0 +1,65 @@
+@media (max-width: 500px) {
+
+    .registerForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        margin: 10px auto;
+        width: 60%;
+        padding: 20px;
+    }
+    
+    .registerForm input {
+        margin-bottom: 20px;
+        padding: 10px;
+        background: transparent;
+        color: white;
+        border: none;
+        border-bottom: solid white 1px;
+        opacity: 0.9;
+        outline: none;
+        font-family: 'Palanquin', sans-serif;
+    }
+    
+    input::placeholder {
+        color: white;
+        transition: 0.8s;
+    }
+    
+    input:active::-webkit-input-placeholder {
+        font-size: 0em;
+        transition: 0.8s;
+    }
+    
+    input:focus::-webkit-input-placeholder {
+        color: rgba(146, 146, 146, 0.322);
+        font-size: 0em;
+        transition: 0.8s;
+    }
+    
+    .registerForm button {
+        margin-top: 10px;
+        background-color: rgba(255, 0, 255, 0.644);
+        height: 40px;
+        border: none;
+        color: white;
+        transition: 0.5s;
+        font-family: 'Palanquin', sans-serif;
+        border-radius: 5px;
+    }
+    
+    .registerForm button:active {
+        background-color: rgb(255, 255, 255);
+        color: rgb(255, 0, 255);
+        transition: 0.5s;
+    }
+}
+
+.registerPage h1 {
+    font-size: 1.2em;
+    color: white;
+    font-family: 'Palanquin', sans-serif;
+    text-align: center;
+    margin-top: 35px;
+}

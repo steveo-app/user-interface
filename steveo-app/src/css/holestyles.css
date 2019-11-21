@@ -1,0 +1,101 @@
+.holeBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -10px;
+}
+
+.holeBox h1 { 
+    color: rgb(70, 0, 161);
+    display: block;
+}
+
+.holeBox h2 {
+    color: rgb(8, 111, 151);
+    margin-top: -40px;
+}
+
+.playersScores {
+    margin-top: -15px;
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    height: 350px;}
+
+.playerAndScore {
+    display: flex;
+    border: solid rgb(26, 142, 196) 2px;
+    border-radius: 5px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    margin-bottom: 5px;
+    background-color: rgb(0, 70, 102);
+}
+
+.playerButton {
+    margin-left: 6px;
+    color: white;
+    height: 70%;
+    width: 80px;
+    font-size: 1.2em;
+    background-color: rgb(35, 2, 112);
+    border: solid white 1px;
+    transition: 0.5s;
+    border-radius: 5px;
+    font-family: 'Palanquin', sans-serif;
+    line-height: 25px;
+}
+
+.playerButton:active {
+    background-color: white;
+    color: rgb(35, 2, 112);
+}
+
+.playerAndScore input {
+    height: 30%;
+    width: 30%;
+    font-family: 'Palanquin', sans-serif;
+}
+
+.successAdd {    
+    margin-right: 6px;
+    font-family: 'Palanquin', sans-serif;
+    width: 40px;
+    background-color: rgb(112, 198, 255);
+    color: rgb(5, 46, 1);
+    border: orange 1px solid;
+    border-radius: 30px;
+    height: 80%;
+    font-size: 0.5em;
+    line-height: 8px;
+    transition: 0.5s;
+}
+
+.nextHole {
+    font-family: 'Palanquin', sans-serif;
+    width: 180px;
+    background-color: rgb(178, 5, 201);
+    color: rgb(213, 228, 255);
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    margin-top: -5px;
+}
+
+.showPlayerScore {
+    text-align: center;
+    line-height: 100px;
+    background-color: rgb(99, 0, 145);
+    width: 175px;
+    height: 100px;
+    margin-top: 200px;
+    position: absolute;
+    color: rgb(253, 253, 253);
+    font-size: 1.5em;
+    transition: 1s;
+    opacity: 0.8;
+    border-radius: 25px;
+}

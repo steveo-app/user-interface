@@ -1,0 +1,130 @@
+.playersBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.playersBox form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playersBox input {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.884);
+    border: none;
+    border-bottom: solid rgba(255, 255, 255, 0.418) 2px;
+    opacity: 0.9;
+    outline: none;
+    font-family: 'Palanquin', sans-serif;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: -0.5px;
+}
+
+.playersBox input::placeholder {
+    color: rgba(255, 255, 255, 0.438);
+    transition: 0.8s;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.playersBox input:active::-webkit-input-placeholder {
+    font-size: 0em;
+    transition: 0.8s;
+    text-align: center;
+}
+
+.playersBox input:focus::-webkit-input-placeholder {
+    color: rgba(9, 23, 151, 0.322);
+    font-size: 0em;
+    transition: 0.8s;
+    text-align: center;
+}
+
+.playersBox h1 {
+    color: rgb(224, 224, 224);
+    font-size: 1.2em;
+}
+
+.addPlayerButton {
+    margin-top: 10px;
+    background-color: rgba(21, 255, 0, 0.644);
+    height: 40px;
+    border: none;
+    color: white;
+    transition: 0.8s;
+    font-family: 'Palanquin', sans-serif;
+    border-radius: 5px;
+    width: 50%;
+    font-size: 1.2em;
+}
+
+.addPlayerButton:active {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 255, 98);
+    transition: 0.8s;
+    font-size: 0.8em;
+}
+
+.addingPlayers {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 246px;
+    margin-bottom: 3px;
+}
+
+.playerBlock {
+    display: flex;
+    border-radius: 3px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 32px;
+    margin-bottom: 4px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(216, 216, 216);
+}
+
+.playerName {
+    border: solid rgba(26, 150, 233, 0.712) 2px;
+    border-radius: 5px;
+    background-color: rgb(3, 78, 148);
+    width: 80%;
+}
+
+.removePlayer {
+    height: 80%;
+    border: solid rgb(255, 94, 0) 1px;
+    border-radius: 1000px;
+    width: 25px;
+    background-color: red;
+}
+
+.playersNext {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    background-color: rgba(0, 110, 255, 0.644);
+    height: 40px;
+    border: rgb(189, 189, 189) solid 2px;
+    color: white;
+    transition: 0.5s;
+    font-family: 'Palanquin', sans-serif;
+    border-radius: 5px;
+    width: 50%;
+    font-size: 1.1em;
+    text-align: center;
+}

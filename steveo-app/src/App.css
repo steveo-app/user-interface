@@ -1,0 +1,80 @@
+.position-absolute {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto
+}
+
+
+@media (max-width: 500px) {
+  .App {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    height: 450px;
+  }
+
+}
+
+.logoText {
+  font-size: 3em;
+  color: paleturquoise;
+  margin-bottom: -10px;
+}
+
+.subText {
+  display: block;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.664);
+  margin-bottom: 20px;
+}
+
+.piggyLogo {
+  width: 85px;
+  height: 85px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.regbutton {
+  background-color: #006494;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  width: 70%;
+  padding: 10px 0;
+  margin-bottom: 15px;
+  transition: 1s;
+  font-family: 'Palanquin', sans-serif;
+}
+
+.regbutton:hover {
+  background-color: white;
+  color: #006494;
+  transition: 0.5s;
+}
+
+.loginbutton {
+  background-color: #2E382E;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  width: 70%;
+  padding: 10px 0;
+  font-family: 'Palanquin', sans-serif;
+}
+
+.loginbutton:hover {
+  background-color: white;
+  color: #2E382E;
+  transition: 0.5s;
+}
